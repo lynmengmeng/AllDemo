@@ -1,0 +1,37 @@
+{
+  "name": "Demo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "82": "adb shell input keyevent 82",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "apk": "cd android && ./gradlew assembleRelease",
+    "d": "react-native run-android",
+    "b": "react-native bundle --platform android --entry-file index.js --bundle-output ./bundles/index.android.bundle --assets-dest ./bundles --dev false",
+    "p": "code-push release-react Demo android --t 0.0.2 --dev false --d Production --des '这是第二个更新包' --m true",
+    "bundle": "react-native bundle --platform android --entry-file index.js --bundle-output ./bundles/index.android.bundle --assets-dest ./bundles --dev false",
+    "apk-bundle": "code-push release Demo ./bundles/index.android.bundle 1.0.0 --deploymentName Staging --description '版本1.1.4' --mandatory false"
+  },
+  "dependencies": {
+    "react": "16.8.3",
+    "react-native": "0.59.4",
+    "react-native-code-push": "^5.6.0",
+    "react-native-gesture-handler": "^1.1.0",
+    "react-native-xml2js": "^1.0.3",
+    "react-navigation": "^3.7.1",
+    "react-redux": "^7.0.2",
+    "redux": "^4.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/runtime": "^7.4.3",
+    "babel-jest": "^24.7.1",
+    "jest": "^24.7.1",
+    "metro-react-native-babel-preset": "^0.53.1",
+    "react-test-renderer": "16.8.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
